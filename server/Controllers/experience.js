@@ -22,4 +22,14 @@ const deleteExp = async (req, res) => {
   }
 };
 
-module.exports = { shareExperience, deleteExp };
+//get all experience
+const getAllExperience= async(req,res)=>{
+    try{
+    const experiences= await Experience.find()
+    res.status(200).json(experiences)
+}catch(error){
+    console.log(error);
+    res.status(400).json("error");
+}
+}
+module.exports={shareExperience,getAllExperience,deleteExp}
