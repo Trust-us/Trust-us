@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
   });
   
 app.post("/signup", UsersContoller.signup);
+app.post("/login", UsersContoller.login);
 
 app.listen(3000, () => {
   console.log("Server is up on port 3000");
