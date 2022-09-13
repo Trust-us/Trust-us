@@ -26,6 +26,7 @@ app.post("/signup", UsersContoller.signup);
 app.post("/login", UsersContoller.login);
 app.get("/logout", UsersContoller.logout)
 app.post("/share", experience.shareExperience)
+app.post("/delete/:id", experience.deleteExp)
 
 app.listen(3000, () => {
   console.log("Server is up on port 3000");
