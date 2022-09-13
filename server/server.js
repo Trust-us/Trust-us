@@ -21,11 +21,17 @@ db();
 app.get("/", (req, res) => {
     res.json({ Hello: "World" });
   });
-  
+  // create new user
 app.post("/signup", UsersContoller.signup);
+// log in for user experience
 app.post("/login", UsersContoller.login);
+//log out from the session
 app.get("/logout", UsersContoller.logout)
-app.post("/share", experience.shareExperience);
+// post new experience
+app.post("/share", experience.shareExperience)
+// delete a post
+app.delete("/delete/:id", experience.deleteExp)
+// get all post 
 app.get("/getAll", experience.getAllExperience);
 
 
