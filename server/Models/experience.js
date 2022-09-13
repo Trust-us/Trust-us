@@ -6,5 +6,5 @@ const expSchema = new mongoose.Schema({
   description:String,
   rate:Number,
 
-});
+}, {timestamps: true} );
 module.exports=mongoose.model("Experience",expSchema)
