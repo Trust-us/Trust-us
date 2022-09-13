@@ -5,5 +5,13 @@ const shareExperience= async(req,res)=>{
     await Experience.create(req.body)
     res.status(201).json({msg:"Post added successfully"})
 }
-
-module.exports={shareExperience}
+const getAllExperience= async(req,res)=>{
+    try{
+    const experiences= await Experience.find()
+    res.status(200).json(experiences)
+}catch(error){
+    console.log(error);
+    res.status(400).json("error");
+}
+}
+module.exports={shareExperience,getAllExperience}
