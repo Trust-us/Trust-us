@@ -33,6 +33,8 @@ app.post("/share", experience.shareExperience)
 app.delete("/delete/:id", experience.deleteExp)
 // get all post 
 app.get("/getAll", experience.getAllExperience);
+//update the post shared
+app.put("/put/:id", experience.updateExp);
 
 
 app.listen(3000, () => {
