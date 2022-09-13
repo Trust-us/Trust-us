@@ -21,11 +21,19 @@ db();
 app.get("/", (req, res) => {
     res.json({ Hello: "World" });
   });
-  
+  // create new user
 app.post("/signup", UsersContoller.signup);
+// log in for user experience
 app.post("/login", UsersContoller.login);
+//log out from the session
 app.get("/logout", UsersContoller.logout)
+// post new experience
 app.post("/share", experience.shareExperience)
+// delete a post
+app.delete("/delete/:id", experience.deleteExp)
+// get all post 
+app.get("/getAll", experience.getAllExperience);
+
 
 app.listen(3000, () => {
   console.log("Server is up on port 3000");
