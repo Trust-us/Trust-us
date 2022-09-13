@@ -1,21 +1,24 @@
 const User = require("../Models/UserModel");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 
 async function signup(req, res) {
+  console.log("req---->", req.body);
   try {
-    const { username, email, password } = req.body;
-    const hashedPassword = bcrypt.hashSync(password, 10);
+    const { username, email, password } = await req.body;
+    const salt = await bcrypt.genSaltSync(10);
+    console.log("salt---->", salt);
 
+    const hash = await bcrypt.hash(password, salt);
     const user = await User.create({
-      username,
-      email,
-      password: hashedPassword,
+      username: username,
+      email: email,
+      password: hash,
     });
-    user.save();
+    console.log("user--->", user);
     res.status(201).json("user created");
   } catch (err) {
     console.log(err);
-    res.status(400).json("alereaady exist");
+    res.status(400).json("error");
   }
 }
 
