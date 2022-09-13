@@ -30,6 +30,19 @@ const getAllExperience= async(req,res)=>{
 }catch(error){
     console.log(error);
     res.status(400).json("error");
-}
-}
-module.exports={shareExperience,getAllExperience,deleteExp}
+}}
+//update the post shared
+const updateExp = async (req, res) => {
+    try {
+      console.log("reqParam---->", req.params);
+      console.log("reqParam---->", req.body);
+      await Experience.findOneAndUpdate({ _id: req.params.id },req.body);
+      res.status(201).json({ message: "Post updated successfully" });
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ msg: "update failed" });
+    }
+  };
+
+
+module.exports={shareExperience,getAllExperience,deleteExp,updateExp}
