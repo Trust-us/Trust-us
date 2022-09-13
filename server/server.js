@@ -3,6 +3,7 @@ const db = require("./config/db");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const UsersContoller = require("./Controllers/UsersController")
+const experience = require("./Controllers/experience")
 
 const app = express();
 app.use(express.json());
@@ -24,6 +25,9 @@ app.get("/", (req, res) => {
 app.post("/signup", UsersContoller.signup);
 app.post("/login", UsersContoller.login);
 app.get("/logout", UsersContoller.logout)
+app.post("/share", experience.shareExperience);
+app.get("/getAll", experience.getAllExperience);
+
 
 app.listen(3000, () => {
   console.log("Server is up on port 3000");
