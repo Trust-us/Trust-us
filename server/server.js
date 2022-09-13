@@ -28,6 +28,7 @@ app.get("/logout", UsersContoller.logout)
 app.post("/share", experience.shareExperience);
 app.get("/getAll", experience.getAllExperience);
 
+
 app.listen(3000, () => {
   console.log("Server is up on port 3000");
 });
