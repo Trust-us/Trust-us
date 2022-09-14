@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="welcom babies " />
+    <Home_navbar />
     <div class="box">
      <h3>hello from restaurant</h3>
      <img src=''/>
@@ -17,13 +17,14 @@
 </template>
 
 <script>
+import Home_navbar from '@/components/home_navbar.vue';
 // @ is an alias to /src
 
 export default {
   name: 'HomeView',
   components: {
-
-  }
+    Home_navbar
+}
 }
 </script>
 <style>
