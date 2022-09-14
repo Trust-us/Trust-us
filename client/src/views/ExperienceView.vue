@@ -34,6 +34,7 @@ const {state , GetAllExperiences} = ExperienceCrud()
         text-align: center;
         background: #ddd;
         margin: 20px;
+        border-radius: 20px;
         display: inline-block;
 
     } 
