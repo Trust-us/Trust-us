@@ -9,7 +9,7 @@ async function signup(req, res) {
     const salt = await bcrypt.genSaltSync(10);
     console.log("salt---->", salt);
 
-    const hash = await bcrypt.hash(password, salt);
+    const hash =  bcrypt.hashSync(password, salt);
     const user = await User.create({
       username: username,
       email: email,
@@ -59,12 +59,20 @@ async function login(req, res) {
     res.status(400).json("error");
    }
   }
-
+  function checkAuth(req, res) {
+    try {
+      console.log(res)
+      res.sendStatus(200);
+    } catch (err) {
+      return res.sendStatus(400);
+    }
+  }
 
 
 
 module.exports = {
   signup,
   login,
-  logout
+  logout,
+  checkAuth
 };

@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const UsersContoller = require("./Controllers/UsersController")
 const experience = require("./Controllers/experience")
+const requireAuth = require ("./middle/requireAuth")
 
 const app = express();
 app.use(express.json());
@@ -27,14 +28,16 @@ app.post("/signup", UsersContoller.signup);
 app.post("/login", UsersContoller.login);
 //log out from the session
 app.get("/logout", UsersContoller.logout)
+//check if user is logged in
+app.get("/checkAuth", requireAuth, UsersContoller.checkAuth);
 // post new experience
-app.post("/share", experience.shareExperience)
+app.post("/share",requireAuth, experience.shareExperience)
 // delete a post
-app.delete("/delete/:id", experience.deleteExp)
+app.delete("/delete/:id",requireAuth, experience.deleteExp)
 // get all post 
-app.get("/getAll", experience.getAllExperience);
+app.get("/getAll", requireAuth, experience.getAllExperience);
 //update the post shared
-app.put("/put/:id", experience.updateExp);
+app.put("/put/:id", requireAuth, experience.updateExp);
 
 
 app.listen(3000, () => {

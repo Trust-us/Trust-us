@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <HelloWorld msg="welcom babies "/>
+    <HelloWorld msg="welcom babies " />
+    <div>
+      <input type="file" @change="uploadFile" ref="file">
+      <button @click="submitFile">Upload!</button>
+    </div>
   </div>
 </template>
 
@@ -10,7 +14,7 @@
 export default {
   name: 'HomeView',
   components: {
-    
+
   }
 }
 </script>
