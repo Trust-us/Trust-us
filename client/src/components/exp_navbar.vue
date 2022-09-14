@@ -1,0 +1,23 @@
+<template lang="">
+    <div>
+
+
+        <nav>
+            <router-link to="/">Home</router-link> |
+            <router-link to="/Experience">Experience</router-link> |
+            <router-link to="/share">Share</router-link> |
+            <router-link to="/about">About</router-link> |
+            <router-link to="/about">Log out</router-link> 
+            
+        </nav>
+        <router-view/>
+    </div>
+</template>
+<script>
+export default {
+    name: 'exp_navbar',
+}
+</script>
+<style lang="">
+    
+</style>

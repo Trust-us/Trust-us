@@ -1,5 +1,4 @@
 <template>
-   <Home_navbar />
 <div id="app">
 
    <div class="login-page">
@@ -42,11 +41,9 @@
 </div>
 </template>
 <script>
-import Home_navbar from "@/components/home_navbar.vue";
 export default {
   
   components: {
-    Home_navbar
 }
 }
 </script>

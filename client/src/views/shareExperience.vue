@@ -1,4 +1,5 @@
 <template lang="">
+    <exp_navbar/>
     <div>
         <div>
         <h3>Share your experience</h3>
@@ -35,8 +36,13 @@
     </div>
 </template>
 <script>
+    import exp_navbar from '../components/exp_navbar.vue' 
+
 export default {
 name:'shareExperience',
+components:{
+exp_navbar
+}
 }
 </script>
 <style lang="js">
