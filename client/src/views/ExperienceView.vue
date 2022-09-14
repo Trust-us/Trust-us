@@ -1,6 +1,6 @@
 <template lang="">
-    <div>
-       <div v-for="item in state.experiences" :key="item.rate">
+    <div >
+       <div class="box" v-for="item in state.experiences" :key="item.rate">
         <h4>{{item.name}}</h4>
         <h4>{{item.category}}</h4>
         <h4>{{item.location}}</h4>
@@ -11,25 +11,31 @@
     </div>
 </template>
 <script>
-import {reactive} from 'vue'
+import ExperienceCrud from '../modules/ExperienceCrud'
+import {onMounted } from 'vue'
 
 export default {
  setup() {
-      const state = reactive({
-    experiences : {}
-   }) 
-   function GetAll(){
-    fetch("http://localhost:3000/getAll")
-    .then(res=>res.json())
-    .then(data=>{
-        state.experiences = data
-    })
-   }
-   GetAll()
-    return {state , GetAll}
+
+const {state , GetAllExperiences} = ExperienceCrud()
+
+   onMounted(()=>{
+       GetAllExperiences()
+   })
+
+    return {state , GetAllExperiences}
  }
 }
 </script>
-<style lang="">
-    
+<style >
+    .box{
+        padding: 100px 0;
+        width:400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        border-radius: 20px;
+        display: inline-block;
+
+    } 
 </style>
