@@ -1,6 +1,8 @@
 <template>
-  <Exp_navbar/>
+
   <div class="home">
+      <Exp_navbar/>
+
     <div class="box">
      <h3>hello from restaurant</h3>
      <img src=''/>
