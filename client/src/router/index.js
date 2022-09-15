@@ -2,6 +2,7 @@ import shareExperienceVue from '@/views/shareExperience.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SigninView from '../views/SigninView'
+import SignUp from '../views/SignUp'
 
 
 
@@ -32,7 +33,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/SignUp.vue')
+    component:SignUp
   },
   {
     path:'/share',

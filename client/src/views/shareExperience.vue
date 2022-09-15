@@ -1,6 +1,6 @@
 <template lang="">
     <exp_navbar/>
-    <div>
+    <div class="share">
         <div>
         <h3>Share your experience</h3>
         <hr />
@@ -45,6 +45,11 @@ exp_navbar
 }
 }
 </script>
-<style lang="js">
-    
+<style >
+   .share{
+    width:600px;
+    margin:2%;
+    display: inline-block;
+
+   }
 </style>

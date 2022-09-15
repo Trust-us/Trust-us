@@ -1,6 +1,6 @@
 <template>
    <div id="app">
-      <home_navbar />
+      
 
       <div class="login-page">
          <transition name="fade">
@@ -28,13 +28,11 @@
    </div>
 </template>
 <script>
-import home_navbar from "@/components/home_navbar.vue";
 
 import axios from 'axios'
 export default {
    name: 'SignUp',
    components: {
-      home_navbar
    },
    data() {
       return {
