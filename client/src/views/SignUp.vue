@@ -15,7 +15,7 @@
                   <input type="email" class="form-control" placeholder="Email" v-model="User.email" required>
                   <input type="password" class="form-control" placeholder="Password" v-model="User.password" required>
                   <input type="submit" class="btn btn-primary" @click="doRegister">
-                  <p>Already have an account? <a href="">Sign in here</a>
+                  <p>Already have an account? <a href="/Signin">Sign in here</a>
                   </p>
                </form>
             </div>
@@ -37,10 +37,7 @@ export default {
    data() {
       return {
          User: { username: '', email: '', password: '' },
-         input: {
-            email: "",
-            password: ""
-         }
+       
       }
 
    },
@@ -57,6 +54,7 @@ export default {
          axios.post('http://localhost:3000/signup', newUser)
             .then((response) => {
                console.log(response);
+               this.$router.push('/Signin')
             })
             .catch((error) => {
                console.log(error);
