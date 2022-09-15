@@ -1,13 +1,13 @@
 <template>
   
-  <Home_navbar />
+  <home_navbar />
 
 </template>
 <script>
-import Home_navbar from "./components/home_navbar.vue";
+import home_navbar from "./components/home_navbar.vue";
 export default {
   components: {
-    Home_navbar
+    home_navbar
   }
 }
 </script>
