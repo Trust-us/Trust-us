@@ -1,20 +1,41 @@
 <template>
   <div class="home">
-    <HelloWorld msg="welcom babies " />
-    <div>
-      <input type="file" @change="uploadFile" ref="file">
-      <button @click="submitFile">Upload!</button>
+    <Home_navbar />
+    <div class="box">
+     <h3>hello from restaurant</h3>
+     <img src=''/>
+    </div>
+    <div class="box">
+      <h3>hello from hotel</h3>
+      <img src=''/>
+    </div>
+    <div class="box">
+     <h3>hello from experiences</h3>
+     <img src=''/>
     </div>
   </div>
 </template>
 
 <script>
+import Home_navbar from '@/components/home_navbar.vue';
 // @ is an alias to /src
 
 export default {
   name: 'HomeView',
   components: {
-
-  }
+    Home_navbar
+}
 }
 </script>
+<style>
+   .box{
+        padding: 100px 0;
+        width:400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        border-radius: 20px;
+        display: inline-block;
+
+    } 
+</style>
