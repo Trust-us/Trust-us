@@ -1,6 +1,7 @@
 <template>
-  <Exp_navbar/>
+
   <div class="home">
+
     <div class="box">
      <h3>hello from restaurant</h3>
      <img src=''/>
@@ -17,13 +18,11 @@
 </template>
 
 <script>
-import Exp_navbar from '@/components/exp_navbar.vue';
 // @ is an alias to /src
 
 export default {
   name: 'HomeView',
   components: {
-    Exp_navbar,
     
 }
 }
