@@ -1,12 +1,17 @@
 import shareExperienceVue from '@/views/shareExperience.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import SigninView from '../views/SigninView'
+
+
+
+
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView ,
   },
   {
     path: '/Experience',
@@ -16,6 +21,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/ExperienceView.vue')
   },
+  {
+    path: '/Signin',
+    name: 'Signin',
+    component:SigninView
+   },
   {
     path: '/about',
     name: 'about',
@@ -28,7 +38,8 @@ const routes = [
     path:'/share',
     name: 'Share',
     component:shareExperienceVue
-  }
+  },
+ 
 ]
 
 const router = createRouter({
