@@ -1,9 +1,10 @@
 <template lang="">
     <div>
-        <nav>
-    <router-link to="/">Home</router-link> |
+        <nav class="navbar">
+    <router-link to="/">Home</router-link> 
    
-    <router-link to="/About">Login/SignUp</router-link> 
+    <router-link to="/Signin">Signin</router-link> 
+    <router-link to="/SignUp">SignUp</router-link> 
 
   </nav>
   <router-view/>
@@ -11,9 +12,15 @@
 </template>
 <script>
 export default {
-    name:'home_navbar'
+    name: 'home_navbar'
 }
 </script>
-<style lang="">
-    
+<style >
+      .navbar{
+        text-align: center;
+        background: #ddd;
+        margin: 10px;
+        border-radius: 10px;
+        /* display: inline-block; */
+    }
 </style>

@@ -1,5 +1,6 @@
 <template lang="">
-    <div>
+    <exp_navbar/>
+    <div class="share">
         <div>
         <h3>Share your experience</h3>
         <hr />
@@ -35,10 +36,20 @@
     </div>
 </template>
 <script>
+    import exp_navbar from '../components/exp_navbar.vue' 
+
 export default {
 name:'shareExperience',
+components:{
+exp_navbar
+}
 }
 </script>
-<style lang="js">
-    
+<style >
+   .share{
+    width:600px;
+    margin:2%;
+    display: inline-block;
+
+   }
 </style>
