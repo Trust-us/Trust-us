@@ -1,6 +1,5 @@
 <template>
   
-         <div class="wallpaper-register"></div>
 
          <div class="container">
             <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
