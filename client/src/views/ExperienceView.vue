@@ -1,6 +1,8 @@
 <template lang="">
-    <div  >
-       <div  class="box" v-for="item in state.experiences" :key="item._id">
+    
+    <exp_navbar/>
+    <div >
+       <div class="box" v-for="item in state.experiences" :key="item.rate">
         <h4>{{item.name}}</h4>
         <input type="text" placeholder="name" v-model="state.ewName">
         <h4>{{item.category}}</h4>
@@ -17,10 +19,15 @@
     </div>
 </template>
 <script>
+import exp_navbar from '../components/exp_navbar.vue' 
 import ExperienceCrud from '../modules/ExperienceCrud'
 import {onMounted } from 'vue'
 
 export default {
+ 
+    components: {
+    exp_navbar
+  },
  setup() {
 
 const {state , GetAllExperiences ,deleteExperience ,editExperience} = ExperienceCrud()
@@ -32,6 +39,7 @@ const {state , GetAllExperiences ,deleteExperience ,editExperience} = Experience
     return {state , GetAllExperiences , deleteExperience ,editExperience}
  }
 }
+
 </script>
 <style >
     .box{

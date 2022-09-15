@@ -1,16 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/Experience">Experience</router-link> |
-    <router-link to="/share">Share</router-link> |
-    <router-link to="/about">signup</router-link> |
-    <router-link to="/Signin">signin</router-link> 
+  
+  <home_navbar />
 
-
-  </nav>
-  <router-view/>
 </template>
-
+<script>
+import home_navbar from "./components/home_navbar.vue";
+export default {
+  components: {
+    home_navbar
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
