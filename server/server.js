@@ -30,7 +30,7 @@ app.post("/login", UsersContoller.login);
 app.get("/logout", UsersContoller.logout)
 //check if user is logged in
 app.get("/checkAuth",  UsersContoller.checkAuth);
-// post new experience
+// share a new Post experience
 app.post("/share", experience.shareExperience)
 // delete a post
 app.delete("/delete/:id", experience.deleteExp)
@@ -38,6 +38,8 @@ app.delete("/delete/:id", experience.deleteExp)
 app.get("/getAll",  experience.getAllExperience);
 //update the post shared
 app.put("/put/:id",  experience.updateExp);
+//filtering postes by categories and locations
+app.post("/search",  experience.filter);
 
 
 
