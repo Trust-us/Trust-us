@@ -43,13 +43,18 @@ const updateExp = async (req, res) => {
       res.status(400).json({ msg: "update failed" });
     }
   };
-  
+
 //filtering postes by categories and locations
 
   const filter = async (req,res)=>{
+    try {
     const experience = await Experience.find({category:req.body.category , location:req.body.location }) 
     console.log(experience);
      return res.send(experience)
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ msg: "error" });
+    }
  }
 
 module.exports={shareExperience,getAllExperience,deleteExp,updateExp , filter}
