@@ -5,6 +5,7 @@ const expSchema = new mongoose.Schema({
   location:{type:String,require:true},
   description:String,
   rate:Number,
+  img:String
 
 }, {timestamps: true} );
 module.exports=mongoose.model("Experience",expSchema)
