@@ -21,6 +21,5 @@ export default {
         background: #ddd;
         margin: 10px;
         border-radius: 10px;
-        /* display: inline-block; */
     }
 </style>
