@@ -29,15 +29,19 @@ app.post("/login", UsersContoller.login);
 //log out from the session
 app.get("/logout", UsersContoller.logout)
 //check if user is logged in
-app.get("/checkAuth", requireAuth, UsersContoller.checkAuth);
-// post new experience
-app.post("/share",requireAuth, experience.shareExperience)
+app.get("/checkAuth",  UsersContoller.checkAuth);
+// share a new Post experience
+app.post("/share", experience.shareExperience)
 // delete a post
-app.delete("/delete/:id",requireAuth, experience.deleteExp)
+app.delete("/delete/:id", experience.deleteExp)
 // get all post 
-app.get("/getAll", requireAuth, experience.getAllExperience);
+app.get("/getAll",  experience.getAllExperience);
 //update the post shared
-app.put("/put/:id", requireAuth, experience.updateExp);
+app.put("/put/:id",  experience.updateExp);
+//filtering postes by categories and locations
+app.post("/search",  experience.filter);
+
+
 
 
 app.listen(3000, () => {
