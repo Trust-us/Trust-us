@@ -1,7 +1,6 @@
 <template>
   
-
-         <div class="signup">
+          <div class="signup">
             <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
                <h1>Sign Up</h1>
                <form class="form-group"  @submit.prevent="doRegister">
@@ -14,7 +13,7 @@
                </form>
             </div>
          </div>
-
+ 
 
 
 
@@ -59,6 +58,7 @@ export default {
 
 </script>
 <style>
+ 
 .signup{
         display: flex;
         justify-content: center;
@@ -96,13 +96,16 @@ export default {
   }
    input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green */
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+  }
+   input[type=submit]:hover {
+    background-color: #45a049; /* Green */
   }
   
 </style>

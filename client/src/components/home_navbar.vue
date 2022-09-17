@@ -2,9 +2,8 @@
     <div>
         <nav class="topnav">
     <router-link to="/">Home</router-link> 
-   
-    <router-link to="/Signin">Signin</router-link> 
-    <router-link to="/SignUp">SignUp</router-link> 
+    <router-link to="/Signin"  >Signin</router-link> 
+    <router-link to="/SignUp"  class="SignupCon">SignUp</router-link> 
 
   </nav>
   <router-view/>
@@ -44,5 +43,10 @@ export default {
         background-color: #04AA6D;
         color: white;
     }
+ 
+.SignupCon{
+  margin-left:1100px;
+
+}
    
 </style>
