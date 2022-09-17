@@ -1,5 +1,5 @@
 <template >
-    <div class="sign">
+    <div class="signin">
           <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
                   <h1>Sign In</h1>
                   <form class="form-group"   @submit.prevent="handleSubmit">
@@ -40,8 +40,12 @@ import axios from 'axios'
 }
 </script>
 <style  >
-    .col-lg-4{
-      background-color: rgba(133, 129, 124, 0.137);
-  border-radius: 20%;
-    }
+     .signin{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 80vh;
+        
+      }
 </style>

@@ -1,4 +1,8 @@
 const Experience = require("../Models/experience");
+const {
+  uploadToCloudinary,
+  removeFromCloudinary,
+} = require("../API/cloudinary");
 //post an experience
 const shareExperience = async (req, res) => {
   try {
@@ -58,3 +62,4 @@ const updateExp = async (req, res) => {
  }
 
 module.exports={shareExperience,getAllExperience,deleteExp,updateExp , filter}
+
