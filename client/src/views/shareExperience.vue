@@ -45,6 +45,7 @@
         <label for="Image">Image : </label>
         <input type="file" @change="handleFileChange($event)" ref="file" multiple accept="image/*"  />
       </div>
+      <img id="output" width="50" />	
       <hr />
 
       <div class="my-3">
@@ -88,6 +89,8 @@ export default {
       console.log("handlefilechange", event.target.files);
       this.file = event.target.files[0];
       this.filesSelected = event.target.files.length;
+      var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
     },
     prepareFormData: function() {
       this.formData = new FormData();
@@ -96,7 +99,9 @@ export default {
     },
     
     upload: function() {
-    
+    // let npost={
+    //   name:this.name
+    // }
       console.log("upload", this.file.name);
       let reader = new FileReader();
       reader.addEventListener(
