@@ -49,7 +49,7 @@
       <hr />
 
       <div class="my-3">
-        <input type="submit" class="btn btn-primary" value="share"/>
+        <input type="submit" class="btn btn-primary" value="Update"/>
         
       </div>
       <div></div>
@@ -68,10 +68,7 @@ import axios from 'axios'
    data() {
 
     return {
-      form: {
-      
-      },
-
+      post: {}
     }
     
   },
@@ -79,11 +76,15 @@ import axios from 'axios'
       methods:{
        
     async  getpost() {
-    let URL =`http://localhost:3000/getone/${this.$route.params.id}`
+    let uri =`http://localhost:3000/getone/${this.$route.params.id}`
       
-      axios.get(URL).then((res) => {
-      this.post = res.data;
+     axios.get(uri).then((response) => {
+      this.post= response.data;
+ console.log(response);
+      
     });
+           
+
     }
       }
  }

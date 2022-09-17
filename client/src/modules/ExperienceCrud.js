@@ -12,6 +12,7 @@ const getExperiences = () => {
         newLocation:'',
         newDescription:'',
         newRate:'',
+        Newimg:'',
         showinput :false,
         experiences : {}
        }) 
