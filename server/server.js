@@ -40,7 +40,8 @@ app.get("/getAll",  experience.getAllExperience);
 app.put("/put/:id",  experience.updateExp);
 //filtering postes by categories and locations
 app.post("/search",  experience.filter);
-
+// get one post 
+app.get("/getone/:id",  experience.getone);
 
 
 
