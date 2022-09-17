@@ -125,7 +125,6 @@ export default {
   width: 600px;
   margin: 2%;
   display: inline-block;
-  background-color: rgba(133, 129, 124, 0.137);
-  border-radius: 20%;
-}
+ }
 </style>
+ 
