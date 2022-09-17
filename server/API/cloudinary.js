@@ -22,4 +22,4 @@ removeFromCloudinary = async (public_id) => {
       console.log(result, error)
   })
 }
-module.exports = { uploadToCloudinary, removeFromCloudinary }
+module.exports = { sendToCloudinary, removeFromCloudinary }
