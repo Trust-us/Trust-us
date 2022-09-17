@@ -43,14 +43,13 @@
       </div>
       <div class="form-group">
         <label for="Image">Image : </label>
-        <input type="file" @change="handlefile($event)" ref="file" multiple accept="image/*"  />
+        <input type="file" @change="handleFileChange($event)" ref="file" multiple accept="image/*"  />
       </div>
       <hr />
 
       <div class="my-3">
-        <button type="submit" class="btn btn-primary" @click="share">
-          Share
-        </button>
+        <input type="submit" class="btn btn-primary" value="share"/>
+        
       </div>
       <div></div>
     </form>
@@ -65,57 +64,71 @@ export default {
   components: {
   },
   data() {
+
     return {
       post: {
         name: '',
         description: '',
         category: '',
         location: '',
-        file: '',
-        img: ''
+        img: '',
+        upload_preset:"lweb9fhl",
+        file: null,
+        fileContents: null,
+        formData: null
+
       },
-      fileContent : ""
+
     }
   },
-  img: {},
+
   methods: {
-    handlefile(event) {
-      this.file = event.target.files[0]
-      console.log(this.file);
-      this.filesSelected = event.target.files.length
-      console.log(this.file.name);
-      let reader = new FileReader()
-
-
-      reader.onload= () => {
-      
-        this.fileContent= reader.result
    
-        if (this.file.name) reader.readAsDataURL(this.file)
-        return this.fileContent
-      }
-      const data =new FormData();
-      data.append('cloud_name', 'trust-us')
-     data.append('upload_preset', 'lweb9fhl')
-     data.append('file', reader.onload())
-
-     console.log("data-->",data);
-    
-      // console.log("url--->", reader.readAsDataURL(this.file));
-      
+    handleFileChange: function(event) {
+      console.log("handlefilechange", event.target.files);
+      this.file = event.target.files[0];
+      this.filesSelected = event.target.files.length;
+    },
+    prepareFormData: function() {
+      this.formData = new FormData();
+      this.formData.append("upload_preset", "lweb9fhl");
+      this.formData.append("file", this.fileContents);
     },
     
-    share() {
-      
-      let newPost = {
-        name: this.post.name, description: this.post.description, category: this.post.category, location: this.post.location,
+    upload: function() {
+    
+      console.log("upload", this.file.name);
+      let reader = new FileReader();
+      reader.addEventListener(
+        "load",
+        function() {
+          this.fileContents = reader.result;
+          this.prepareFormData();
+          let cloudinaryUploadURL = `https://api.cloudinary.com/v1_1/trust-us/upload`;
+          let requestObj = {
+            url: cloudinaryUploadURL,
+            method: "POST",
+            data: this.formData,
+           
+          };
+          axios(requestObj)
+            .then(response => {
+              let results = response.data;
+              console.log(results);
+            })
+            .catch(error => {
+             console.log(error);
+            })
+        }.bind(this),
+        false
+      );
+      if (this.file && this.file.name) {
+        reader.readAsDataURL(this.file);
       }
-      console.log(newPost);
-      axios.post('http://localhost:3000/share', newPost);
-      axios.post('https://api.cloudinary.com/v1_1/trust-us/upload');
-    },
+    }
   }
 }
+
 
 
 
