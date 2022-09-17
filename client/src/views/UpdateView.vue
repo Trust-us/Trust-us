@@ -7,11 +7,11 @@
       <div class="form-group">
         <label>Name</label>
         <input
+          v-model="post.name"
           type="text"
           class="form-control"
-        
+         
           placeholder="Place name"
-          v-model="post.name"
         />
       </div>
       <div class="form-group">
@@ -43,7 +43,7 @@
       </div>
       <div class="form-group">
         <label for="Image">Image : </label>
-        <input type="file" @change="handleFileChange($event)" ref="file" multiple accept="image/*"  />
+        <input type="file" @change="handleFileChange($event)" ref="file" multiple accept="image/*" />
       </div>
       <img id="output" width="50" />	
       <hr />
@@ -55,39 +55,73 @@
       <div></div>
     </form>
   </div>
+  <pre>{{post}}</pre>
 </template>
 <script>
- 
 import axios from 'axios'
+ 
+  
  export default {
+  
     name : 'UpdateView' ,
       components: {
          
   },
   
-   data() {
+   data()  {
 
     return {
-      post: {}
+         id : this.$route.params.id, 
+      post: {},
+  
     }
-    
   },
+  methods:{
+async getone(){
+let id = this.id
 
-      methods:{
-       
-    async  getpost() {
-    let uri =`http://localhost:3000/getone/${this.$route.params.id}`
+   await axios.get(`http://localhost:3000/getone/${id}`) 
+ .then(response=>{ console.log(response);
+ console.log("string",response.data);
+this.post=response.data
+
+  })
+.catch(error=>{
+ console.log(error)
+  })
+
+}
+  },
+   beforeMount() {
+    
+       this.getone()
+   
+   },
+ }
+//       methods:{
+   
+//     async  getpost(id) {
+
+//   //   let uri ="http://localhost:3000/getone/${6323883cc691360d4a48cf04}"
       
-     axios.get(uri).then((response) => {
-      this.post= response.data;
- console.log(response);
+//   // await fetch(uri).then(( response) => { console.log(this.id);
+//   //     this.post= response.data;
+            
+//  let uri =`http://localhost:3000/getone/${id}`
       
-    });
+//   await fetch(uri).then(( response) => { console.log(id);
+//       this.post= response.data;
+ 
+      
+//     });
            
 
-    }
-      }
- }
+//     }
+//       }
+ 
+
+
+ 
 
 </script>
 <style lang="">
