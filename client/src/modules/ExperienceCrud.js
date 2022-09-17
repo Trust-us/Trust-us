@@ -1,9 +1,11 @@
 import { ref } from "vue"
-
+import { useRouter } from "vue-router"
 
 
 
 const getExperiences = () => {
+  const router = useRouter()
+
     const state = ref({
         newName:'',
         newCategory:'',
@@ -38,15 +40,15 @@ const deleteExperience = (_id) => {
         }
        }
     //    update an experience post 
-    const editExperience = (_id) => { 
-        const requestOptions = {
-          method: "PUT",
+    // const editExperience = (_id) => { 
+    //     const requestOptions = {
+    //       method: "PUT",
          
-          }
-          fetch("http://localhost:3000/put/" + _id ,requestOptions )
-          .then(res =>res.body)
-          .then(res =>{console.log(res)})
-        }
+    //       }
+    //       fetch("http://localhost:3000/put/" + _id ,requestOptions )
+    //       .then(res =>res.body)
+    //       .then(res =>{console.log(res)})
+    //     }
     // const editExperience = (_id) => { 
     //     const requestOptions = {
     //       method: "PUT",
@@ -69,6 +71,14 @@ const deleteExperience = (_id) => {
     //       .then(res => {console.log(res)}) // redundant
     //       router.push('/todos')
     //   }
+    async function editExperience(_id) {
+      router.push({
+        name: 'Update',
+        params: {
+          id: _id,
+        },
+      })
+    }
 
    return {
     state,
