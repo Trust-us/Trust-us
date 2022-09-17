@@ -3,7 +3,7 @@
     <div>
       <h3 style="color:blue"><b>Share your experience</b></h3>
     </div>
-    <form @submit.prevent="">
+    <form @submit.prevent="Update">
       <div class="form-group">
         <label>Name</label>
         <input
@@ -72,7 +72,14 @@ import axios from 'axios'
 
     return {
          id : this.$route.params.id, 
-      post: {},
+      post: {
+           name: '',
+        description: '',
+        category: '',
+        location: '',
+        rate: "",
+        img: '',
+      },
   
     }
   },
@@ -90,6 +97,17 @@ this.post=response.data
  console.log(error)
   })
 
+},
+async Update(){
+  let id = this.id
+    await axios.put(`http://localhost:3000/put/${id}`,this.post) 
+     .then(response=>{ console.log(response);
+ console.log("string",response.data);
+return this.$router.push('/Experience')
+  })
+.catch(error=>{
+ console.log(error)
+  })
 }
   },
    beforeMount() {
@@ -97,27 +115,9 @@ this.post=response.data
        this.getone()
    
    },
- }
-//       methods:{
    
-//     async  getpost(id) {
+ }
 
-//   //   let uri ="http://localhost:3000/getone/${6323883cc691360d4a48cf04}"
-      
-//   // await fetch(uri).then(( response) => { console.log(this.id);
-//   //     this.post= response.data;
-            
-//  let uri =`http://localhost:3000/getone/${id}`
-      
-//   await fetch(uri).then(( response) => { console.log(id);
-//       this.post= response.data;
- 
-      
-//     });
-           
-
-//     }
-//       }
  
 
 
