@@ -57,6 +57,8 @@
   </div>
 </template>
 <script>
+ 
+import axios from 'axios'
  export default {
     name : 'UpdateView' ,
       components: {
@@ -66,32 +68,26 @@
    data() {
 
     return {
-      post: {
-        name: '',
-        description: '',
-        category: '',
-        location: '',
-        img: '',
-        upload_preset:"lweb9fhl",
-        file: null,
-        fileContents: null,
-        formData: null
-
+      form: {
+      
       },
 
     }
     
   },
-      methods:{
-    // async  getpost() {
-    //   const { id } = route.params
-    //   const response = await fetch(`/${id}`)
-    //   const json = await response.json()
-    //   post.value = json
-    // }
-}
 
+      methods:{
+       
+    async  getpost() {
+    let URL =`http://localhost:3000/getone/${this.$route.params.id}`
+      
+      axios.get(URL).then((res) => {
+      this.post = res.data;
+    });
+    }
+      }
  }
+
 </script>
 <style lang="">
     
