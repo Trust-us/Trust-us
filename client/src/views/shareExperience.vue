@@ -1,10 +1,9 @@
 <template lang="">
-  <exp_navbar />
   <div class="share">
     <div>
       <h3 style="color:blue"><b>Share your experience</b></h3>
     </div>
-    <form>
+    <form v-on:submit.prevent="upload">
       <div class="form-group">
         <label>Name</label>
         <input
@@ -44,7 +43,7 @@
       </div>
       <div class="form-group">
         <label for="Image">Image : </label>
-        <input type="file" @change="uploadFile" ref="file"  />
+        <input type="file" @change="handlefile($event)" ref="file" multiple accept="image/*"  />
       </div>
       <hr />
 
@@ -59,31 +58,65 @@
 </template>
 <script>
 import axios from "axios";
-import exp_navbar from "../components/exp_navbar.vue";
+
 
 export default {
   name: "shareExperience",
   components: {
-    exp_navbar,
-  }, data() {
+  },
+  data() {
     return {
       post: {
         name: '',
-         description: '', 
-         category: '',
-          location: '',
-      }}}, 
-      methods: {
-        share() {
-          let newPost = {
-            name: this.post.name, description: this.post.description, category: this.post.category, location: this.post.location, img: this.post.img
-          }
-          console.log(newPost);
-          axios.post('http://localhost:3000/share', newPost)
-        }
-      }
+        description: '',
+        category: '',
+        location: '',
+        file: '',
+        img: ''
+      },
+      fileContent : ""
     }
-  
+  },
+  img: {},
+  methods: {
+    handlefile(event) {
+      this.file = event.target.files[0]
+      console.log(this.file);
+      this.filesSelected = event.target.files.length
+      console.log(this.file.name);
+      let reader = new FileReader()
+
+
+      reader.onload= () => {
+      
+        this.fileContent= reader.result
+   
+        if (this.file.name) reader.readAsDataURL(this.file)
+        return this.fileContent
+      }
+      const data =new FormData();
+      data.append('cloud_name', 'trust-us')
+     data.append('upload_preset', 'lweb9fhl')
+     data.append('file', reader.onload())
+
+     console.log("data-->",data);
+    
+      // console.log("url--->", reader.readAsDataURL(this.file));
+      
+    },
+    
+    share() {
+      
+      let newPost = {
+        name: this.post.name, description: this.post.description, category: this.post.category, location: this.post.location,
+      }
+      console.log(newPost);
+      axios.post('http://localhost:3000/share', newPost);
+      axios.post('https://api.cloudinary.com/v1_1/trust-us/upload');
+    },
+  }
+}
+
 
 
 </script>
@@ -92,7 +125,6 @@ export default {
   width: 600px;
   margin: 2%;
   display: inline-block;
-  background-color: rgba(133, 129, 124, 0.137);
-  border-radius: 20%;
-}
+ }
 </style>
+ 

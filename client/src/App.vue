@@ -1,14 +1,18 @@
 <template>
   
   <home_navbar />
+  <!-- <Exp_navbar /> -->
 
 </template>
 <script>
+  
 import home_navbar from "./components/home_navbar.vue";
+// import Exp_navbar from "./components/exp_navbar.vue";
 export default {
   components: {
-    home_navbar
-  }
+    home_navbar,
+    // Exp_navbar
+}
 }
 </script>
 <style lang="scss">
