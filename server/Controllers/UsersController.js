@@ -41,7 +41,7 @@ async function login(req, res) {
     httpOnly:true,
     sameSite:"lax"
   });
-  res.status(200).json("login success");
+  res.status(200).json({log:true,msg:"login success"});
 
  } catch (error) {
     console.log(error);

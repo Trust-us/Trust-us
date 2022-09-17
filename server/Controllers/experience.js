@@ -1,4 +1,8 @@
 const Experience = require("../Models/experience");
+const {
+  uploadToCloudinary,
+  removeFromCloudinary,
+} = require("../API/cloudinary");
 //post an experience
 const shareExperience = async (req, res) => {
   try {
@@ -56,6 +60,17 @@ const updateExp = async (req, res) => {
       res.status(400).json({ msg: "error" });
     }
  }
+ //get one post 
+ const getone = async (req, res) => {
+  try {
+    const { id } = req.params
+    const experience = await Experience.findById(id)
+    if (!experience) return
+    res.status(200).json(experience)
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-module.exports={shareExperience,getAllExperience,deleteExp,updateExp , filter}
+module.exports={shareExperience,getAllExperience,deleteExp,updateExp , filter,getone}
 
