@@ -76,7 +76,7 @@ export default {
   padding: 100px 0;
   width: 400px;
   text-align: center;
-  background: #0fd34a85;
+  background: #F3F4F6;
   margin: 20px;
   border-radius: 20px;
   display: inline-block;
@@ -99,10 +99,10 @@ export default {
   text-align: center;
   padding: 16px 14px 18px;
   color: #fff;
-  background-color: #15883e;
+  background-color: #34495E;
   height: 48px;
 }
 .btn :hover {
-  background-color: #1db9549a;
+  background-color: #41B883;
 }
 </style>
