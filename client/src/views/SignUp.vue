@@ -1,6 +1,7 @@
 <template>
   
-          <div class="signup">
+
+         <div class="container">
             <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
                <h1>Sign Up</h1>
                <form class="form-group"  @submit.prevent="doRegister">
@@ -13,7 +14,7 @@
                </form>
             </div>
          </div>
- 
+
 
 
 
@@ -25,7 +26,6 @@ import axios from 'axios'
 export default {
    name: 'SignUp',
    components: {
-      
    },
    data() {
       return {
@@ -58,54 +58,8 @@ export default {
 
 </script>
 <style>
- 
-.signup{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 80vh;
-      }
-
-    input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  input[type=password], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  input[type=email], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-   input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50; /* Green */
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-   input[type=submit]:hover {
-    background-color: #45a049; /* Green */
-  }
-  
+   .col-lg-4{
+      background-color: rgba(133, 129, 124, 0.137);
+  border-radius: 20%;
+    }
 </style>
