@@ -1,7 +1,18 @@
 <template lang="">
     
-    <exp_navbar/>
     <div >
+        <div class="n">
+    <nav class="topnav">
+      
+      
+      <a class="baha">Trust-us</a> 
+      <router-link to="/Experience">Experience</router-link>
+      <router-link to="/share">Share</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link v-on:click="Logout" to="/Signin">Logout</router-link>
+    </nav>
+    <router-view />
+  </div>
        <div class="box" v-for="item in state.experiences" :key="item._id">
         <img v-bind:src="item.img" />
         <div>
@@ -18,14 +29,12 @@
     </div>
 </template>
 <script>
-import exp_navbar from '../components/exp_navbar.vue' 
 import ExperienceCrud from '../modules/ExperienceCrud'
 import {onMounted } from 'vue'
 
 export default {
  
     components: {
-    exp_navbar
   },
  setup() {
 

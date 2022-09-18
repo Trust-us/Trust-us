@@ -3,7 +3,7 @@
     <nav class="topnav">
       
       
-      <a class="baha">Trust-us</a> 
+      <router-link to="/" class="baha">Trust-us</router-link>
       <router-link to="/Experience">Experience</router-link>
       <router-link to="/share">Share</router-link>
       <router-link to="/about">About</router-link>

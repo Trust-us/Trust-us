@@ -1,7 +1,6 @@
 <template>
 
   <div class="home">
-
     <div class="boxin">
       <img src='https://media-cdn.tripadvisor.com/media/photo-s/11/56/5b/36/le-restaurant.jpg'  />
     </div>
@@ -16,11 +15,9 @@
 
 <script>
 // @ is an alias to /src
-
 export default {
   name: 'HomeView',
   components: {
-    
 }
 }
 </script>
