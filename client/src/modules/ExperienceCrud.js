@@ -5,12 +5,6 @@ const getExperiences = () => {
   const router = useRouter();
 
     const state = ref({
-        newName:'',
-        newCategory:'',
-        newLocation:'',
-        newDescription:'',
-        newRate:'',
-        Newimg:'',
         experiences : {}
        }) 
       
@@ -49,7 +43,7 @@ const getExperiences = () => {
         },
       })
     }
-
+//exporting functions globally
    return {
     state,
     GetAllExperiences,

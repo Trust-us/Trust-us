@@ -28,6 +28,8 @@ import axios from 'axios'
             await axios.post('http://localhost:3000/login' , this.login ,{withCredentials: true })
           .then(res=>{
              this.$router.push("/Experience")
+             this.$bus.$emit('logged', 'User logged')
+
             this.$cookie.set('token',res.data.token)
           })
           .catch(error=>{

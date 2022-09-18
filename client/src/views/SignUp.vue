@@ -96,7 +96,7 @@ export default {
   }
    input[type=submit] {
     width: 100%;
-    background-color: #4CAF50; /* Green */
+    background-color: #34495E; 
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
