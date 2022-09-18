@@ -71,6 +71,7 @@ export default {
 
   data() {
     return {
+      // Setting the state to get the id from params 
       id: this.$route.params.id,
       post: {
         name: '',
@@ -83,7 +84,9 @@ export default {
 
     }
   },
+
   methods: {
+    //using the id to get One post info so we can sate the state with old information 
     async getone() {
       let id = this.id
 
@@ -99,6 +102,7 @@ export default {
         })
 
     },
+    // Updating the fields 
     async Update() {
       let id = this.id
       await axios.put(`http://localhost:3000/put/${id}`, this.post)

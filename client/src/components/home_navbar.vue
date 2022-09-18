@@ -1,9 +1,10 @@
 <template lang="">
     <div>
-        <nav >
-    <router-link to="/">Home</router-link> 
-    <router-link to="/Signin"  >Signin</router-link> 
-    <router-link to="/SignUp"  class="SignupCon">SignUp</router-link> 
+        <nav class="topnav">
+    <router-link to="/">Home</router-link> |
+    
+    <router-link to="/Signin"  >Signin</router-link> | 
+    <router-link to="/About"  class="SignupCon">AboutUs</router-link> 
 
   </nav>
   <router-view/>
@@ -15,6 +16,33 @@ export default {
 }
 </script>
 <style >
-    
+    body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
    
 </style>
