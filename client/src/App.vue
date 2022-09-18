@@ -1,16 +1,13 @@
 <template>
   
-  <home_navbar />
-  <!-- <Exp_navbar /> -->
+<router-view/>
 
 </template>
 <script>
   
-import home_navbar from "./components/home_navbar.vue";
 // import Exp_navbar from "./components/exp_navbar.vue";
 export default {
   components: {
-    home_navbar,
     // Exp_navbar
 }
 }

@@ -45,10 +45,13 @@ const {state , GetAllExperiences ,deleteExperience ,editExperience} = Experience
         padding: 100px 0;
         width:400px;
         text-align: center;
-        background: #ddd;
+        background: #01942d5d;
         margin: 20px;
         border-radius: 20px;
         display: inline-block;
 
     } 
+    button{
+        color: red;
+    }
 </style>
