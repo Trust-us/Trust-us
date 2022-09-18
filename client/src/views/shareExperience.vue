@@ -61,7 +61,7 @@
       <hr />
 
       <div class="my-3">
-        <input type="submit" class="btn btn-primary" value="share"/>
+        <input type="submit" class="btn" value="share"/>
         
       </div>
       <div></div>
@@ -169,6 +169,8 @@ export default {
    width: 600px;
   margin: 2%;
   display: inline-block;
+  
 }
+
 </style>
  
