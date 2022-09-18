@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="share">
+    <div class="share" >
     <div>
       <h3 style="color:blue"><b>Share your experience</b></h3>
     </div>
@@ -43,7 +43,7 @@
       </div>
       <div class="form-group">
         <label for="Image">Image : </label>
-        <input type="file" @change="handleFileChange($event)" ref="file" multiple accept="image/*"  />
+        <input type="file"  ref="file" multiple accept="image/*"  />
       </div>
       <img id="output" width="50" />	
       <hr />
@@ -57,37 +57,44 @@
   </div>
 </template>
 <script>
- 
+import ExperienceCrud from '../modules/ExperienceCrud'
+import {onMounted } from 'vue'
 import axios from 'axios'
- export default {
-    name : 'UpdateView' ,
-      components: {
-         
-  },
-  
-   data() {
+export default {
+  name: 'UpdateView',
+  setup() {
 
+const {state} = ExperienceCrud()
+
+   onMounted(()=>{
+   })
+
+    return {state}
+ },
+  data() {
     return {
-      post: {}
-    }
-    
-  },
+      post: {
 
-      methods:{
-       
-    async  getpost() {
-    let uri =`http://localhost:3000/getone/${this.$route.params.id}`
-      
-     axios.get(uri).then((response) => {
-      this.post= response.data;
- console.log(response);
-      
-    });
-           
-
-    }
       }
- }
+    }
+  },
+  methods: {
+    async getpost() {
+
+      axios({
+          url: `http://localhost:3000/getone/${this.$route.params.id}`,
+          method: "get",
+
+        })
+        .then((response) => {
+          this.post = response.data;
+          console.log("resp---->", response);
+        }).catch((err) => {
+          console.log(err);
+        });
+    }
+  }
+}
 
 </script>
 <style lang="">
