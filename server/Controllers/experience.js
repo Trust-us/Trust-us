@@ -18,12 +18,13 @@ const shareExperience = async (req, res) => {
 //delete experience
 const deleteExp = async (req, res) => {
   try {
-    console.log("reqParam---->", req.params);
-    console.log("reqParam---->", req.body);
-
-    await Experience.deleteOne({ _id: req.params.id });
-    const publicId = Experience.public;
+    console.log(res);
+    
+    const baha= await Experience.findById({ _id: req.params.id });
+    const publicId = baha.public;
+    console.log("p_id--->",publicId);
     await removeFromCloudinary(publicId);
+    await Experience.deleteOne({ _id: req.params.id });
     res.status(201).json({ message: "Post deleted successfully" });
 
   } catch (error) {

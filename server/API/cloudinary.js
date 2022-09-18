@@ -1,11 +1,12 @@
 const cloudinary = require('cloudinary').v2
 const dotenv = require("dotenv");
 dotenv.config();
+require("dotenv").config();
 //CLD Config
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name:'trust-us',
+  api_key: 636717224412268,
+  api_secret:'AvwHCkHR34Xv4GqjKBw2oGgnNME',
 });
 //Uploqding img to CLD
 sendToCloudinary = (path, data) => {
