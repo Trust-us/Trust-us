@@ -7,7 +7,6 @@ import SignUp from '../views/SignUp'
 
 
 
-
 const routes = [
   {
     path: '/',
@@ -40,7 +39,11 @@ const routes = [
     name: 'Share',
     component:shareExperienceVue
   },
- 
+  {
+    path: '/Update/:id',
+    name: 'Update',
+    component: () => import(/* webpackChunkName: "about" */ '../views/UpdateView.vue')
+   },
 ]
 
 const router = createRouter({

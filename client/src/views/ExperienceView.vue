@@ -3,11 +3,15 @@
     <exp_navbar/>
     <div >
        <div class="box" v-for="item in state.experiences" :key="item._id">
-        <h4>{{item.name}}</h4>
-         <h4>{{item.category}}</h4>
-         <h4>{{item.location}}</h4>
-         <h4>{{item.description}}</h4>
-        <h4>{{item.rate}}</h4>
+        <img v-bind:src="item.img" />
+        <div>
+        <h4>Name: {{item.name}}</h4>
+         <h4>Category: {{item.category}}</h4>
+         <h4>Location :{{item.location}}</h4>
+         <h4>Description :{{item.description}}</h4>
+        <h4> Rate :{{item.rate}}/5</h4>
+        </div>
+       
          <button type="button" class="btn btn-primary" @click="editExperience(item._id)  " >Edit</button>
          <button  type="button" class="btn btn-danger" @click="deleteExperience(item._id)">Delete</button>
          </div>

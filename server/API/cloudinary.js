@@ -17,8 +17,8 @@ sendToCloudinary = (path, data) => {
   })
 }
 
-removeFromCloudinary = async (public_id) => {
-  await cloudinary.v2.uploader.destroy(public_id, function (error, result) {
+removeFromCloudinary = async (url) => {
+  await cloudinary.v2.uploader.destroy(url, function (error, result) {
       console.log(result, error)
   })
 }
