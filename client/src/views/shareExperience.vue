@@ -1,4 +1,5 @@
 <template lang="">
+  <exp_navbarVue/>
   <div class="share">
     <div>
       <h3 ><b>Share your experience</b></h3>
@@ -60,7 +61,7 @@
       <hr />
 
       <div class="my-3">
-        <input type="submit" class="btn btn-primary" value="share"/>
+        <input type="submit" class="btn" value="share"/>
         
       </div>
       <div></div>
@@ -68,12 +69,14 @@
   </div>
 </template>
 <script>
+import exp_navbarVue from "@/components/exp_navbar.vue";
 import axios from "axios";
 
 
 export default {
   name: "shareExperience",
   components: {
+    exp_navbarVue
   },
   data() {
 
@@ -96,7 +99,7 @@ export default {
   },
 
   methods: {
-
+      // uploading file from the locale to UI 
     handleFileChange: function (event) {
       console.log("handlefilechange", event.target.files);
       this.file = event.target.files[0];
@@ -104,12 +107,13 @@ export default {
       var image = document.getElementById('output');
       image.src = URL.createObjectURL(event.target.files[0]);
     },
+    // changing the data form
     prepareFormData: function () {
       this.formData = new FormData();
       this.formData.append("upload_preset", "lweb9fhl");
       this.formData.append("file", this.fileContents);
     },
-
+// uploading the img to the cld 
     upload: function () {
       let newPost = {
         name: this.post.name,
@@ -165,6 +169,8 @@ export default {
    width: 600px;
   margin: 2%;
   display: inline-block;
+  
 }
+
 </style>
  

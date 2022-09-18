@@ -1,11 +1,13 @@
 <template lang="">
-  <div>
+  <div class="n">
     <nav class="topnav">
-      <router-link to="/">Home</router-link>
+      <a class="baha">Trust-us</a>
+
+      <router-link to="/home">Home</router-link>
       <router-link to="/Experience">Experience</router-link>
       <router-link to="/share">Share</router-link>
       <router-link to="/about">About</router-link>
-      <router-link v-on:click="Logout" to="/Signin">Logout</router-link>
+      <router-link v-on:click="Logout" to="/">Logout</router-link>
     </nav>
     <router-view />
   </div>
@@ -15,7 +17,7 @@ import axios from "axios";
 export default {
   name: "exp_navbar",
   methods: {
-    /// define logout function and handling the request
+    //define logout function and handling the request
     async Logout() {
       await axios
         .get("http://localhost:3000/logout", { withCredentials: true })
@@ -38,7 +40,7 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color:#34495E;
 }
 
 .topnav a {
@@ -56,12 +58,12 @@ body {
 }
 
 .topnav a.active {
-  background-color: #04aa6d;
+  background-color:#41B883;
   color: white;
 }
 
-/* .log{
-  margin-left:900px;
-
-} */
+.topnav .baha {
+  color: white;
+  font-family: "Brush Script MT", cursive;
+}
 </style>

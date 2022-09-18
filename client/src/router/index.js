@@ -9,7 +9,7 @@ import SignUp from '../views/SignUp'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: HomeView ,
   },
@@ -22,7 +22,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/ExperienceView.vue')
   },
   {
-    path: '/Signin',
+    path: '/',
     name: 'Signin',
     component:SigninView
    },

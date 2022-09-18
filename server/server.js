@@ -29,7 +29,7 @@ app.post("/login", UsersContoller.login);
 //log out from the session
 app.get("/logout", UsersContoller.logout)
 //check if user is logged in
-app.get("/checkAuth",  UsersContoller.checkAuth);
+app.get("/checkAuth",   UsersContoller.checkAuth);
 // share a new Post experience
 app.post("/share", experience.shareExperience)
 // delete a post
