@@ -1,4 +1,5 @@
 <template lang="">
+  <exp_navbarVue/>
   <div class="share">
     <div>
       <h3 ><b>Share your experience</b></h3>
@@ -68,12 +69,14 @@
   </div>
 </template>
 <script>
+import exp_navbarVue from "@/components/exp_navbar.vue";
 import axios from "axios";
 
 
 export default {
   name: "shareExperience",
   components: {
+    exp_navbarVue
   },
   data() {
 
