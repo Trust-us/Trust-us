@@ -55,9 +55,9 @@
       <div></div>
     </form>
   </div>
-  <pre>{{post}}</pre>
-</template>
+ </template>
 <script>
+  
 import axios from 'axios'
 
 
