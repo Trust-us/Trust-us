@@ -15,7 +15,7 @@ import axios from "axios";
 export default {
   name: "exp_navbar",
   methods: {
-    /// define logout function and handling the request
+    //define logout function and handling the request
     async Logout() {
       await axios
         .get("http://localhost:3000/logout", { withCredentials: true })
