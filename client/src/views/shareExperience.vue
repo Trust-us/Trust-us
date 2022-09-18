@@ -1,7 +1,7 @@
 <template lang="">
   <div class="share">
     <div>
-      <h3 style="color:blue"><b>Share your experience</b></h3>
+      <h3 ><b>Share your experience</b></h3>
     </div>
     <form v-on:submit.prevent="upload">
       <div class="form-group">
@@ -26,15 +26,15 @@
       </div>
       <div class="form-group">
         <label>Category :</label>
-        <select v-model="post.category">
-          <option>hotels</option>
+        <select v-model="post.category"  >
+          <option>Hotels</option>
           <option>Restaurant</option>
           <option>Others</option>
         </select>
       </div>
       <div class="form-group">
         <label>Location : </label>
-        <select v-model="post.location">
+        <select v-model="post.location" selected="selected">
           <option>Tunis</option>
           <option>Hammamt</option>
           <option>Klibiya</option>
@@ -141,7 +141,7 @@ export default {
      
               console.log(newPost);
               axios.post('http://localhost:3000/share', newPost)
-
+              this.$router.push('/Experience')
             })
             .catch(error => {
               console.log(error);
@@ -162,7 +162,7 @@ export default {
 </script>
 <style>
 .share {
-  width: 600px;
+   width: 600px;
   margin: 2%;
   display: inline-block;
 }
