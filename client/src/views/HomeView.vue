@@ -27,7 +27,7 @@ export default {
 <style>
  .home {
  
-        display:grid;
+        display: flex;
 align-content: center;   
 justify-content: center;    
  padding: 100px 50px ;
