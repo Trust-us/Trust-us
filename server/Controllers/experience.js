@@ -60,6 +60,42 @@ const updateExp = async (req, res) => {
       res.status(400).json({ msg: "error" });
     }
  }
+//filtering postes by restaurent categorie  
+
+ const filterbyHotels = async (req,res)=>{
+  try {
+  const experience = await Experience.find({  category:"hotels"}) 
+  console.log(experience);
+   return res.send(experience)
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ msg: "error" });
+  }
+}
+//filtering postes by Others categorie  
+
+const filterbyOthers = async (req,res)=>{
+  try {
+  const experience = await Experience.find({  category:"Others"}) 
+  console.log(experience);
+   return res.send(experience)
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ msg: "error" });
+  }
+}
+//filtering postes by restaurent categorie  
+
+const filterbyRestaurent = async (req,res)=>{
+  try {
+  const experience = await Experience.find({  category:"Restaurant"}) 
+  console.log(experience);
+   return res.send(experience)
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ msg: "error" });
+  }
+}
  //get one post 
  const getone = async (req, res) => {
   try {
@@ -72,5 +108,5 @@ const updateExp = async (req, res) => {
   }
 }
 
-module.exports={shareExperience,getAllExperience,deleteExp,updateExp , filter,getone}
+module.exports={shareExperience,getAllExperience,deleteExp,updateExp , filter,getone,filterbyHotels ,filterbyOthers,filterbyRestaurent}
 

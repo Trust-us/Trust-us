@@ -2,6 +2,9 @@
   
 <router-view/>
 
+<footer>ZIWI-BAHA-DALY Copyrigths 2022 ©️ </footer>
+
+
 </template>
 <script>
   

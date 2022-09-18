@@ -18,7 +18,6 @@
         />
       </div>
     </div>
-    <footer id="footer"><span class="span">ZIWI </span><span  class="span">BAHA </span> <span  class="span">DALY </span>Copyrigths 2022 ©️</footer>
   </div>
 </template>
 
@@ -60,7 +59,7 @@ img {
 .boxin:hover img {
   transform: scale(1.2);
 }
-#footer {
+footer {
   text-align: center;
   padding: 3px;
   background-color: #f1f1f1;
@@ -69,8 +68,8 @@ img {
   bottom: 0;
   width: 100%;
 }
-.span {
+/* .span {
  margin-right: 20px;
   color: #000000;
-}
+} */
 </style>
