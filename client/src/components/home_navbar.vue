@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <nav >
+        <nav class="topnav">
     <router-link to="/">Home</router-link> |
     
     <router-link to="/Signin"  >Signin</router-link> | 
@@ -16,6 +16,33 @@ export default {
 }
 </script>
 <style >
-    
+    body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
    
 </style>

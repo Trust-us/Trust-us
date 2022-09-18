@@ -1,7 +1,9 @@
 <template lang="">
-  <div>
+  <div class="n">
     <nav class="topnav">
-      <router-link to="/">Home</router-link>
+      
+      
+      <a class="baha">Trust-us</a> 
       <router-link to="/Experience">Experience</router-link>
       <router-link to="/share">Share</router-link>
       <router-link to="/about">About</router-link>
@@ -60,8 +62,8 @@ body {
   color: white;
 }
 
-/* .log{
-  margin-left:900px;
-
-} */
+.topnav .baha{
+  color:white;
+  font-family: 'Brush Script MT', cursive;
+}
 </style>
