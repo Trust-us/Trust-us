@@ -34,8 +34,9 @@ import axios from 'axios'
              this.log=res.data.log
              console.log("log--->",this.log);
              this.$router.push("/Experience")
-            // this.$cookie.set('token',res.data.token)
-            console.log("res.datta--->>",res.data);
+             this.$bus.$emit('logged', 'User logged')
+
+            this.$cookie.set('token',res.data.token)
           })
           .catch(error=>{
             console.log(error);
