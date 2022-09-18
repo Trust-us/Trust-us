@@ -42,7 +42,12 @@ app.put("/put/:id",  experience.updateExp);
 app.post("/search",  experience.filter);
 // get one post 
 app.get("/getone/:id",  experience.getone);
-
+//filtering postes by Hotels categorie  
+app.get("/hotels",  experience.filterbyHotels);
+//filtering postes by Others categorie  
+app.get("/Others",  experience.filterbyOthers);
+//filtering postes by restaurent categorie  
+app.get("/Restaurant",  experience.filterbyRestaurent);
 
 
 app.listen(3000, () => {
