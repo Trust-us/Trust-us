@@ -96,7 +96,7 @@ export default {
   },
 
   methods: {
-
+      // uploading file from the locale to UI 
     handleFileChange: function (event) {
       console.log("handlefilechange", event.target.files);
       this.file = event.target.files[0];
@@ -104,12 +104,13 @@ export default {
       var image = document.getElementById('output');
       image.src = URL.createObjectURL(event.target.files[0]);
     },
+    // changing the data form
     prepareFormData: function () {
       this.formData = new FormData();
       this.formData.append("upload_preset", "lweb9fhl");
       this.formData.append("file", this.fileContents);
     },
-
+// uploading the img to the cld 
     upload: function () {
       let newPost = {
         name: this.post.name,
