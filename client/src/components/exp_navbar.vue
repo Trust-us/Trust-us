@@ -3,22 +3,41 @@
 
 
         <nav class="topnav">
+            <a >Trust-Us</a>
             <router-link to="/">Home</router-link> 
             <router-link to="/Experience">Experience</router-link> 
             <router-link to="/share">Share</router-link> 
             <router-link to="/about">About</router-link> 
-            <router-link class="log" to="/about">Log out</router-link> 
+            <router-link v-on:click="Logout" class="log" to="/Signin">Logout</router-link> 
             
         </nav>
         <router-view/>
     </div>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
     name: 'exp_navbar',
-}
+  methods: {
+    async Logout() {
+      await axios
+        .get("http://localhost:3000/logout", { withCredentials: true })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+  },
+   
+};
+
 </script>
 <style >
+
      body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
@@ -47,7 +66,9 @@ export default {
         background-color: #04AA6D;
         color: white;
     }
- 
+  
+
+  
 /* .log{
   margin-left:900px;
 

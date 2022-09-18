@@ -5,14 +5,7 @@ import { useRouter } from "vue-router"
 
 const getExperiences = () => {
   const router = useRouter()
-
     const state = ref({
-        newName:'',
-        newCategory:'',
-        newLocation:'',
-        newDescription:'',
-        newRate:'',
-        Newimg:'',
         experiences : {}
        }) 
       
@@ -39,7 +32,7 @@ const deleteExperience = (_id) => {
           console.log(error);
         }
        }
-   
+   //edit allow you to get the id of a selected post inside the route as a param
     async function editExperience(_id) {
       router.push({
         name: 'Update',
@@ -48,7 +41,7 @@ const deleteExperience = (_id) => {
         },
       })
     }
-
+//exporting functions globally
    return {
     state,
     GetAllExperiences,

@@ -43,7 +43,7 @@
       </div>
       <div class="form-group">
         <label for="Image">Image : </label>
-        <input type="file" @change="handleFileChange($event)" ref="file" multiple accept="image/*" />
+        <input type="file" ref="file" multiple accept="image/*" />
       </div>
       <img id="output" width="50" />	
       <hr />
@@ -55,9 +55,9 @@
       <div></div>
     </form>
   </div>
-  <pre>{{post}}</pre>
-</template>
+ </template>
 <script>
+  
 import axios from 'axios'
  
   
@@ -67,7 +67,7 @@ import axios from 'axios'
       components: {
          
   },
-  
+
    data()  {
 
     return {
@@ -85,6 +85,7 @@ import axios from 'axios'
   },
   methods:{
 async getone(){
+  
 let id = this.id
 
    await axios.get(`http://localhost:3000/getone/${id}`) 
@@ -110,6 +111,7 @@ return this.$router.push('/Experience')
   })
 }
   },
+  
    beforeMount() {
     
        this.getone()
