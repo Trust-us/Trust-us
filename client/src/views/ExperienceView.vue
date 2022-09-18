@@ -1,22 +1,4 @@
 <template lang="">
-<<<<<<< HEAD
-    
-    <div >
-        <div class="n">
-    <nav class="topnav">
-      
-      
-      <a class="baha">Trust-us</a> 
-      <router-link to="/Experience">Experience</router-link>
-      <router-link to="/share">Share</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link v-on:click="Logout" to="/Signin">Logout</router-link>
-    </nav>
-    <router-view />
-  </div>
-       <div class="box" v-for="item in state.experiences" :key="item._id">
-        <img v-bind:src="item.img" />
-=======
   <exp_navbar />
   <div>
     <div class="box" v-for="item in state.experiences" :key="item._id">
@@ -25,7 +7,6 @@
         <h4>Name: {{ item.name }}</h4>
         <h4>Category: {{ item.category }}</h4>
         <h4>Location :{{ item.location }}</h4>
->>>>>>> db85f45ddd97b6c88f3c2b974e281aa103f7b7f7
         <div>
           <p>Description :{{ item.description }}</p>
         </div>
@@ -42,14 +23,6 @@
   </div>
 </template>
 <script>
-<<<<<<< HEAD
-import ExperienceCrud from '../modules/ExperienceCrud'
-import {onMounted } from 'vue'
-
-export default {
- 
-    components: {
-=======
 import exp_navbar from "../components/exp_navbar.vue";
 import ExperienceCrud from "../modules/ExperienceCrud";
 import { onMounted } from "vue";
@@ -57,7 +30,6 @@ import { onMounted } from "vue";
 export default {
   components: {
     exp_navbar,
->>>>>>> db85f45ddd97b6c88f3c2b974e281aa103f7b7f7
   },
   setup() {
     const { state, GetAllExperiences, deleteExperience, editExperience } =

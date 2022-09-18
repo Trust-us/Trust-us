@@ -1,15 +1,9 @@
 <template lang="">
   <div class="n">
     <nav class="topnav">
-<<<<<<< HEAD
-      
-      
-      <router-link to="/" class="baha">Trust-us</router-link>
-=======
       <a class="baha">Trust-us</a>
 
       <router-link to="/home">Home</router-link>
->>>>>>> db85f45ddd97b6c88f3c2b974e281aa103f7b7f7
       <router-link to="/Experience">Experience</router-link>
       <router-link to="/share">Share</router-link>
       <router-link to="/about">About</router-link>

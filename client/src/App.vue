@@ -7,10 +7,6 @@
   
 // import Exp_navbar from "./components/exp_navbar.vue";
 export default {
-data(){
-  
-},
-
   components: {
     // Exp_navbar
 }

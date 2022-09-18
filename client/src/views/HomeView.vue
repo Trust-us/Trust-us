@@ -19,6 +19,7 @@
 <script>
 import Exp_navbar from '@/components/exp_navbar.vue';
 // @ is an alias to /src
+
 export default {
   name: 'HomeView',
   components: {

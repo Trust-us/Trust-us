@@ -18,9 +18,10 @@ sendToCloudinary = (path, data) => {
   })
 }
 //  delete img from the CLD 
-removeFromCloudinary = async (url) => {
-  await cloudinary.v2.uploader.destroy(url, function (error, result) {
-      console.log(result, error)
+removeFromCloudinary = async (public_id) => {
+  await cloudinary.uploader.destroy(public_id, function (error, result) {
+      console.log("result API--->",result)
+      console.log("err--->api", error)
   })
 }
 module.exports = { sendToCloudinary, removeFromCloudinary }

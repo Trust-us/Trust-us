@@ -15,13 +15,9 @@
 <script>
 import axios from 'axios'
  export default {
- 
    name : 'SigninView' ,
-   components:{
-   },
    data() {
       return {
-         log:false,
       login:{ 
           email: '',
           password: '' }
@@ -31,8 +27,6 @@ import axios from 'axios'
          async handleSubmit(){
             await axios.post('http://localhost:3000/login' , this.login ,{withCredentials: true })
           .then(res=>{
-             this.log=res.data.log
-             console.log("log--->",this.log);
              this.$router.push("/Experience")
              this.$bus.$emit('logged', 'User logged')
 
