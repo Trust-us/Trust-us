@@ -11,6 +11,7 @@
          <h4>Description :{{item.description}}</h4>
         <h4> Rate :{{item.rate}}/5</h4>
         </div>
+       
          <button type="button" class="btn btn-primary" @click="editExperience(item._id)  " >Edit</button>
          <button  type="button" class="btn btn-danger" @click="deleteExperience(item._id)">Delete</button>
          </div>

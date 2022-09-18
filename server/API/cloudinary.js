@@ -1,12 +1,13 @@
 const cloudinary = require('cloudinary').v2
 const dotenv = require("dotenv");
 dotenv.config();
-
+//CLD Config
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+//Uploqding img to CLD
 sendToCloudinary = (path, data) => {
   return cloudinary.v2.uploader.upload(path, {
       data
@@ -16,9 +17,9 @@ sendToCloudinary = (path, data) => {
       console.log(error)
   })
 }
-
-removeFromCloudinary = async (public_id) => {
-  await cloudinary.v2.uploader.destroy(public_id, function (error, result) {
+//  delete img from the CLD 
+removeFromCloudinary = async (url) => {
+  await cloudinary.v2.uploader.destroy(url, function (error, result) {
       console.log(result, error)
   })
 }
