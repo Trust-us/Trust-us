@@ -1,7 +1,7 @@
 <template lang="">
   <div class="share">
     <div>
-      <h3 style="color:blue"><b>Share your experience</b></h3>
+      <h3 ><b>Share your experience</b></h3>
     </div>
     <form v-on:submit.prevent="upload">
       <div class="form-group">
@@ -26,15 +26,15 @@
       </div>
       <div class="form-group">
         <label>Category :</label>
-        <select v-model="post.category">
-          <option>hotels</option>
+        <select v-model="post.category"  >
+          <option>Hotels</option>
           <option>Restaurant</option>
           <option>Others</option>
         </select>
       </div>
       <div class="form-group">
         <label>Location : </label>
-        <select v-model="post.location">
+        <select v-model="post.location" selected="selected">
           <option>Tunis</option>
           <option>Hammamt</option>
           <option>Klibiya</option>
@@ -42,9 +42,20 @@
         </select>
       </div>
       <div class="form-group">
+        <label>Rate : </label>
+        <select v-model="post.rate">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label for="Image">Image : </label>
         <input type="file" @change="handleFileChange($event)" ref="file" multiple accept="image/*"  />
       </div>
+      <hr />
       <img id="output" width="50" />	
       <hr />
 
@@ -72,8 +83,9 @@ export default {
         description: '',
         category: '',
         location: '',
+        rate: null,
         img: '',
-        upload_preset:"lweb9fhl",
+        upload_preset: "lweb9fhl",
         file: null,
         fileContents: null,
         formData: null
@@ -84,29 +96,34 @@ export default {
   },
 
   methods: {
-   
-    handleFileChange: function(event) {
+
+    handleFileChange: function (event) {
       console.log("handlefilechange", event.target.files);
       this.file = event.target.files[0];
       this.filesSelected = event.target.files.length;
       var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
+      image.src = URL.createObjectURL(event.target.files[0]);
     },
-    prepareFormData: function() {
+    prepareFormData: function () {
       this.formData = new FormData();
       this.formData.append("upload_preset", "lweb9fhl");
       this.formData.append("file", this.fileContents);
     },
-    
-    upload: function() {
-    // let npost={
-    //   name:this.name
-    // }
+
+    upload: function () {
+      let newPost = {
+        name: this.post.name,
+        category: this.post.category,
+        location: this.post.location,
+        description: this.post.description,
+        rate: this.post.rate,
+        img: this.img
+      }
       console.log("upload", this.file.name);
       let reader = new FileReader();
       reader.addEventListener(
         "load",
-        function() {
+        function () {
           this.fileContents = reader.result;
           this.prepareFormData();
           let cloudinaryUploadURL = `https://api.cloudinary.com/v1_1/trust-us/upload`;
@@ -114,15 +131,20 @@ export default {
             url: cloudinaryUploadURL,
             method: "POST",
             data: this.formData,
-           
+
           };
           axios(requestObj)
             .then(response => {
               let results = response.data;
               console.log(results);
+              newPost.img = response.data.secure_url
+     
+              console.log(newPost);
+              axios.post('http://localhost:3000/share', newPost)
+              this.$router.push('/Experience')
             })
             .catch(error => {
-             console.log(error);
+              console.log(error);
             })
         }.bind(this),
         false
@@ -140,9 +162,9 @@ export default {
 </script>
 <style>
 .share {
-  width: 600px;
+   width: 600px;
   margin: 2%;
   display: inline-block;
- }
+}
 </style>
  

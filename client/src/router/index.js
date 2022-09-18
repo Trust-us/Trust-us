@@ -7,7 +7,6 @@ import SignUp from '../views/SignUp'
 
 
 
-
 const routes = [
   {
     path: '/',
@@ -35,12 +34,21 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component:SignUp
   },
+  // {
+  //   path:'/client/src/views/LogOut.vue',
+  //   name:'LogOut',
+  //   component:()=>import(/* webpackChunkName: "about" */ '../views/LogOut.vue')
+  // },
   {
     path:'/share',
     name: 'Share',
     component:shareExperienceVue
   },
- 
+  {
+    path: '/Update/:id',
+    name: 'Update',
+    component: () => import(/* webpackChunkName: "about" */ '../views/UpdateView.vue')
+   },
 ]
 
 const router = createRouter({
