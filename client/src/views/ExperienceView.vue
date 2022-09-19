@@ -14,10 +14,11 @@
       </div>
 
       <button type="button" class="btn" @click="editExperience(item._id)">
-        Edit
-      </button>
+        Edit <i class="fa-solid fa-pen-to-square"></i>
+      </button> 
       <button type="button" class="btn" @click="deleteExperience(item._id)">
-        Delete
+        Delete <i class="fa fa-trash" aria-hidden="true"></i>
+
       </button>
     </div>
   </div>
