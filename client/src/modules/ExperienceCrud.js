@@ -12,8 +12,8 @@ const getExperiences = () => {
   // delete a experience post
   const deleteExperience = (_id) => {
     fetch("http://localhost:3000/delete/" + _id, { method: "DELETE" });
-    location.reload();
-  };
+    window.location.reload() 
+   };
 
   // Get experience data from backend
 

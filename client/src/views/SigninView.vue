@@ -5,7 +5,7 @@
                   <form class="form-group"   @submit.prevent="handleSubmit">
                      <input v-model="login.email" type="email" class="form-control" placeholder="Email" required>
                      <input   v-model="login.password" type="password" class="form-control" placeholder="Password" required>
-                     <input type="submit" class="btn btn-primary" >
+                     <input type="submit" class="btn btn-primary"  value="log in">
                      <p>If you dont have an account,<a href="/SignUp"> Sign up</a> here!
                      </p>
                   </form>

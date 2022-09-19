@@ -81,7 +81,7 @@ const filter = async (req, res) => {
 
 const filterbyHotels = async (req, res) => {
   try {
-    const experience = await Experience.find({ category: "hotels" });
+    const experience = await Experience.find({ category: "Hotels" });
     console.log(experience);
     return res.send(experience);
   } catch (error) {
