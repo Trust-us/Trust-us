@@ -7,7 +7,7 @@
                   
                   <input type="text" class="form-control" placeholder="username" v-model="User.username" required>
                   <input type="email" class="form-control" placeholder="Email" v-model="User.email" required>
-                  <input type="password" class="form-control" placeholder="Password" v-model="User.password" required>
+                  <input type="password" class="form-control" placeholder="Password" v-model="User.password" minlength="8" required>
                   <input type="submit" class="btn btn-primary" value="register">
                   <p>Already have an account? <a href="/">Sign in here</a>
                   </p>
@@ -47,6 +47,7 @@ export default {
          console.log(newUser);
         await axios.post('http://localhost:3000/signup', newUser ,{withCredentials: true })
             .then(res => {
+               alert("sign up with success")
               this.$router.push('/')
                console.log(res)
             })
