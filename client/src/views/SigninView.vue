@@ -4,7 +4,7 @@
                   <h1>Connexion <i class="fa fa-sign-in" aria-hidden="true"></i></h1>
                   <form class="form-group"   @submit.prevent="handleSubmit">
                      <input v-model="login.email" type="email" class="form-control" placeholder="Email" required>
-                     <input   v-model="login.password" type="password" class="form-control" placeholder="Password" required>
+                     <input   v-model="login.password" type="password" class="form-control" placeholder="Password" minlength="8" required >
                      <input type="submit" class="btn btn-primary"  value="Connexion" >
                      <p>If you dont have an account,<a href="/SignUp"> Sign up </a> here!
                      </p>
@@ -27,6 +27,7 @@ import axios from 'axios'
          async handleSubmit(){
             await axios.post('http://localhost:3000/login' , this.login ,{withCredentials: true })
           .then(res=>{
+            alert("login with success")
              this.$router.push("/home")
              this.$bus.$emit('logged', 'User logged')
 
