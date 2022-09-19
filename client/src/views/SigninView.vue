@@ -27,7 +27,7 @@ import axios from 'axios'
          async handleSubmit(){
             await axios.post('http://localhost:3000/login' , this.login ,{withCredentials: true })
           .then(res=>{
-             this.$router.push("/Experience")
+             this.$router.push("/home")
              this.$bus.$emit('logged', 'User logged')
 
             this.$cookie.set('token',res.data.token)
