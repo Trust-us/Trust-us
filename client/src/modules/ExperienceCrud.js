@@ -30,7 +30,7 @@ const getExperiences = () => {
   };
   
  
-git 
+
 
 // edit experience data from backend
 
