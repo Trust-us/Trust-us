@@ -4,10 +4,11 @@
       <a class="baha">Trust-us</a>
 
       <router-link to="/home">Feed</router-link>
-      <router-link to="/Experience">Profile</router-link>
-      <router-link to="/share">Share</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link v-on:click="Logout" to="/">Logout</router-link>
+      <router-link to="/Experience">Profile <i class="fa fa-home fa-1x"></i></router-link>
+      <router-link to="/share">Share <i class="fa-solid fa-share"></i></router-link>
+      <router-link to="/about">About <i class="fa-solid fa-address-card"></i></router-link>
+      <router-link v-on:click="Logout" to="/">Logout <i class="fa fa-sign-out" aria-hidden="true"></i>
+</router-link>
     </nav>
     <router-view />
   </div>
