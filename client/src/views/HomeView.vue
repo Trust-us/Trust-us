@@ -4,64 +4,61 @@
     <h1 @click="this.$router.go">Explore & Discover others Opinions </h1>
  
     <div class="box" v-for="item in exp" :key="item._id">
-      <h1>Hotels</h1>
-      <img v-bind:src="item.img" />
+      <h4>Hotel</h4>
       <div>
-        <h4>Name: {{ item.name }}</h4>
-        <h4>Category: {{ item.category }}</h4>
+        <h1>{{ item.name }}</h1>
+        <img v-bind:src="item.img" />
         <h4>Location :{{ item.location }}</h4>
         <div>
           <p>Description :{{ item.description }}</p>
         </div>
+        <hr class="w3-border-grey" style="margin: auto; width: 40%" />
         <h4>Rate :{{ item.rate }}/5</h4>
       </div>
     </div>
     <div class="box" v-for="res in rest" :key="res._id">
-      <h1>Restaurent</h1>
-      <img v-bind:src="res.img" />
+      <h6>Restaurent</h6>
       <div>
-        <h4>Name: {{ res.name }}</h4>
+        <h1>{{ res.name }}</h1>
+        <img v-bind:src="res.img" />
         <h4>Category: {{ res.category }}</h4>
         <h4>Location :{{ res.location }}</h4>
         <div>
-          <p>Description :{{ res.description }}</p>
+          <p>Description :{{ res.description }}</p><th></th>
         </div>
+        <hr class="w3-border-grey" style="margin: auto; width: 40%" />
         <h4>Rate :{{ res.rate }}/5</h4>
       </div>
     </div>
     <div class="box" v-for="other in others" :key="other._id">
-      <h1>Others</h1>
-      <img v-bind:src="other.img" />
       <div>
-        <h4>Name: {{ other.name }}</h4>
-        <h4>Category: {{ other.category }}</h4>
+        <h4>{{ other.name }}</h4>
+        <img v-bind:src="other.img" />
         <h4>Location :{{ other.location }}</h4>
         <div>
           <p>Description :{{ other.description }}</p>
         </div>
+        <hr class="w3-border-grey" style="margin: auto; width: 40%" />
         <h4>Rate :{{ other.rate }}/5</h4>
       </div>
       </div>
     <div class="home">
     
       <div class="boxin">
-        <h2>Restaurent :</h2>
-        <img
-          src="https://media-cdn.tripadvisor.com/media/photo-s/11/56/5b/36/le-restaurant.jpg"
+        <img class="mg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulSXNcjxDELHGMaPlTSRYeEZ0yriWnRqEfAMXT2IW55pwVlZhuUJq20JjoNuJiqN_ze0&usqp=CAU"
           @click="GetRestaurant" />
       </div>
       <div class="boxin">
-        <h2>hotels :</h2>
 
-        <img
-          src="https://img1.picmix.com/output/pic/normal/1/0/6/4/6754601_8a8ca.gif"
+        <img class="mg"
+          src="https://thumbs.dreamstime.com/b/hotel-13341433.jpg"
           @click="GetHotels"/>
       </div>
       <div class="boxin">
-        <h2>others :</h2>
 
-        <img
-          src="https://media.safarway.com/content/0b76e818-6d34-48b0-87ef-48910788806c_sm.jpg"
+        <img class="mg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3duccYpuZ7i0gBtSJphuLEAuqotmieN_h1g&usqp=CAU"
         @click="GetOthers"/>
       </div>
       
@@ -149,8 +146,22 @@ export default {
 /* Clear floats after image containers */
 .boxin {
   display: flex;
+
 }
 
+.mg {
+  border-radius: 08px;
+  height: 350px;
+  width: 450px;
+  margin: 15px;
+}
+.boxin .mg {
+  transition: 0.5s all ease-in-out;
+}
+
+.boxin:hover .mg {
+  transform: scale(1.2);
+}
 img {
   border-radius: 20px;
   height: 300px;
