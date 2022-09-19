@@ -82,7 +82,7 @@
       <hr />
 
       <div class="my-3">
-        <input type="submit" class="btn" value="share"/>
+        <button type="submit" class="btn" value="share" > share <i class="fa-solid fa-share"></i></button>
         
       </div>
       <div></div>

@@ -11,8 +11,9 @@
       </div>
       <div class="w3-display-bottomleft w3-padding-large"></div>
     </div><br>
-    <button @click="backHome" class="btn">BACK HOME</button><br><br><br><br><br><br>
-   <a href="https://github.com/Trust-us/Trust-us" id="a">CLICK TO SEE THE SOURCE CODE ON GITHUB</a>
+    <button @click="backHome" class="btn">BACK HOME <i class="fa fa-arrow-left" aria-hidden="true"></i>
+</button><br><br><br><br><br><br>
+   <a  href="https://github.com/Trust-us/Trust-us" id="a"> <i class="fa-brands fa-github fa-2xl" ></i></a>
   </div>
 </template>
 <script>
@@ -62,14 +63,13 @@ export default {
   margin-right:100px ;
 }
 #h2{
-  margin-top: 50px;
+  margin-top: 20px;
 }
 #a{
   margin-top: 100px;
   font-size: 20px;
   font-weight: bold;
-  color: #41B883;
+  color: #34495E;
 }
-
-
+ 
 </style>
