@@ -2,7 +2,7 @@
   
           <div class="signup">
             <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
-               <h1>Sign Up <i class="fa-solid fa-user"></i></h1>
+               <h1>Inscription <i class="fa-solid fa-user"></i></h1>
                <form class="form-group"  @submit.prevent="doRegister">
                   
                   <input type="text" class="form-control" placeholder="username" v-model="User.username" required>
