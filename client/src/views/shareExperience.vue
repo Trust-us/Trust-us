@@ -88,6 +88,7 @@ export default {
         location: '',
         rate: null,
         img: '',
+        public:"",
         upload_preset: "lweb9fhl",
         file: null,
         fileContents: null,
@@ -121,7 +122,8 @@ export default {
         location: this.post.location,
         description: this.post.description,
         rate: this.post.rate,
-        img: this.img
+        img: this.img,
+        public:this.public
       }
       console.log("upload", this.file.name);
       let reader = new FileReader();
@@ -142,6 +144,7 @@ export default {
               let results = response.data;
               console.log(results);
               newPost.img = response.data.secure_url
+              newPost.public = response.data.public_id
      
               console.log(newPost);
               axios.post('http://localhost:3000/share', newPost)
