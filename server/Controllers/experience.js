@@ -1,9 +1,9 @@
 const Experience = require("../Models/experience");
 
 const {
-  uploadToCloudinary,
   removeFromCloudinary,
   updateImg,
+  sendToCloudinary,
 } = require("../API/cloudinary");
 //post an experience
 const shareExperience = async (req, res) => {
@@ -47,11 +47,13 @@ const getAllExperience = async (req, res) => {
 //update the post shared
 const updateExp = async (req, res) => {
   try {
+    // const baha = await Experience.findById({ _id: req.params.id });
+    // const publicId = baha.public;
+    // console.log("p_id--->", publicId);
+    // await removeFromCloudinary(publicId);
+    // const res = await sendToCloudinary(.....)
+
     await Experience.findOneAndUpdate({ _id: req.params.id }, req.body);
-    const baha = await Experience.findById({ _id: req.params.id });
-    const url = baha.img;
-    console.log("url-->",url);
-    updateImg(url)
 
     res.status(201).json({ message: "Post updated successfully" });
   } catch (error) {
