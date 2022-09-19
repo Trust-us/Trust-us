@@ -11,6 +11,7 @@
     "axios": "^0.27.2",
     "cloudinary": "^1.32.0",
     "core-js": "^3.8.3",
+    "notiwind": "^1.2.6",
     "vue": "^3.2.13",
     "vue-progressbar": "^0.7.5",
     "vue-router": "^4.0.3"
