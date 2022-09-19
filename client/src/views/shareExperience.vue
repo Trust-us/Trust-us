@@ -36,10 +36,31 @@
       <div class="form-group">
         <label>Location : </label>
         <select v-model="post.location" selected="selected">
+          <option>Tozeur</option>
           <option>Tunis</option>
-          <option>Hammamt</option>
+          <option>Zaghouan</option>
+          <option>Tataouine</option>
+          <option>Nabeul</option>
+          <option>Bizerte</option>
+          <option>Gabès</option>
+          <option>Gafsa</option>
+          <option>Kairouan</option>
+          <option>Kasserine</option>
+          <option>Kébili</option>
+          <option>Le Kef</option>
+          <option>Mahdia</option>
+          <option>Médenine</option>
+          <option>Monastir</option>
+          <option>Béja</option>
+          <option>Sfax</option>
+          <option>Siliana</option>
+          <option>Sousse</option>
+          <option>Djerba</option>
+          <option>Gammarth</option>
+          <option>kantaoui</option>
           <option>Klibiya</option>
-          <option>Ghamarth</option>
+          <option>kelibia</option>
+          <option>hammamet </option>
         </select>
       </div>
       <div class="form-group">
