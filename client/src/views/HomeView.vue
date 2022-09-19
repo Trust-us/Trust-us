@@ -151,8 +151,8 @@ export default {
 
 .mg {
   border-radius: 08px;
-  height: 500px;
-  width: 500px;
+  height: 350px;
+  width: 450px;
   margin: 15px;
 }
 .boxin .mg {
