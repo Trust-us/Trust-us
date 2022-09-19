@@ -1,7 +1,7 @@
 <template lang="">
     <div class="share" >
     <div>
-      <h3 style="color:blue"><b>Share your experience</b></h3>
+      <h3 style="color:blue"><b>Update your experience</b></h3>
     </div>
     <form @submit.prevent="Update">
       <div class="form-group">
@@ -41,11 +41,11 @@
           <option>Ghamarth</option>
         </select>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="Image">Image : </label>
         <input type="file" ref="file" multiple accept="image/*" />
       </div>
-      <img id="output" width="50" />	
+      <img id="output" width="50" />	 -->
       <hr />
 
       <div class="my-3">
