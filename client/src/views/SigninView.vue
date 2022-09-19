@@ -1,3 +1,4 @@
+
 <template>
   <div class="signin">
     <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
@@ -21,6 +22,7 @@
         <input type="submit" class="btn btn-primary" value="log in" />
         <p>If you dont have an account,<a href="/SignUp"> Sign up</a> here!</p>
       </form>
+
     </div>
   </div>
 </template>

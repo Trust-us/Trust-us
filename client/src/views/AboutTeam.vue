@@ -3,7 +3,7 @@
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
       <div class="w3-display-topleft w3-padding-large w3-xlarge"></div>
       <div class="w3-display-middle">
-        <h1 class="w3-jumbo w3-animate-top">ABOUT US</h1>
+        <h1  class="w3-jumbo w3-animate-top">ABOUT US</h1>
         <hr class="w3-border-grey" style="margin: auto; width: 40%" />
         <h2 id="h2">TRUST US</h2>
         <p class="w3-large w3-center" id="p"><span class="span">Main idea</span><br>we made an app  called best plan wich it gives you the opportunity to share you experience about  hotels/restaurents/journey in beach or any awesome place to visit  with the others , ofcourse it can be the worst plan , this app give anyone the opportunity to discover tunisia and where he can fell good in his vacation or anyother day .... and it's a good + for the strangers  
@@ -13,7 +13,7 @@
     </div><br>
     <button @click="backHome" class="btn">BACK HOME <i class="fa fa-arrow-left" aria-hidden="true"></i>
 </button><br><br><br><br><br><br>
-   <a  href="https://github.com/Trust-us/Trust-us" id="a"> <i class="fa-brands fa-github fa-2xl" ></i></a>
+  <a  href="https://github.com/Trust-us/Trust-us" id="a"> <i class="fa-brands fa-github fa-2xl" ></i></a> <i class="fa fa-envelope fa-2xl" aria-hidden="true" ></i>  
   </div>
 </template>
 <script>
@@ -71,5 +71,6 @@ export default {
   font-weight: bold;
   color: #34495E;
 }
+ 
  
 </style>
