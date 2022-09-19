@@ -1,24 +1,35 @@
 <template>
   <div>
     <Exp_navbar />
+    <h1>Explore & Discover others Opinions</h1>
     <div class="home">
+    
       <div class="boxin">
+        <h2>Restaurent :</h2>
         <img
           src="https://media-cdn.tripadvisor.com/media/photo-s/11/56/5b/36/le-restaurant.jpg"
         />
       </div>
       <div class="boxin">
+        <h2>hotels :</h2>
+
         <img
           src="https://img1.picmix.com/output/pic/normal/1/0/6/4/6754601_8a8ca.gif"
         />
       </div>
       <div class="boxin">
+        <h2>others :</h2>
+
         <img
           src="https://media.safarway.com/content/0b76e818-6d34-48b0-87ef-48910788806c_sm.jpg"
         />
       </div>
+      
     </div>
+    
   </div>
+  
+ 
 </template>
 
 <script>
@@ -33,6 +44,11 @@ export default {
 };
 </script>
 <style>
+  h1{
+    background-color: #f1f1f1;
+  }
+ 
+ 
 .home {
   display: flex;
   align-content: center;
