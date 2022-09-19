@@ -7,7 +7,7 @@
                   
                   <input type="text" class="form-control" placeholder="username" v-model="User.username" required>
                   <input type="email" class="form-control" placeholder="Email" v-model="User.email" required>
-<
+
                   <input type="password" class="form-control" placeholder="Password" v-model="User.password" minlength="8" required>
 
                   <input type="submit" class="btn btn-primary" value="register">
