@@ -1,27 +1,16 @@
 
-<template>
-  <div class="signin">
-    <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
-      <h1>Sign In</h1>
-      <form class="form-group" @submit.prevent="handleSubmit">
-        <input
-          v-model="login.email"
-          type="email"
-          class="form-control"
-          placeholder="Email"
-          required
-        />
-        <input
-          v-model="login.password"
-          type="password"
-          class="form-control"
-          placeholder="Password"
-          minlength="8"
-          required
-        />
-        <input type="submit" class="btn btn-primary" value="log in" />
-        <p>If you dont have an account,<a href="/SignUp"> Sign up</a> here!</p>
-      </form>
+<template >
+    <div class="signin">
+          <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+                  <h1>Connexion <i class="fa fa-sign-in" aria-hidden="true"></i></h1>
+                  <form class="form-group"   @submit.prevent="handleSubmit">
+                     <input v-model="login.email" type="email" class="form-control" placeholder="Email" required>
+                     <input   v-model="login.password" type="password" class="form-control" placeholder="Password" minlength="8" required >
+                     <input type="submit" class="btn btn-primary"  value="Connexion" >
+                     <p>If you dont have an account,<a href="/SignUp"> Sign up </a> here!
+                     </p>
+                  </form>
+               </div>
 
     </div>
   </div>
@@ -36,18 +25,23 @@ export default {
         email: "",
         password: "",
       },
-    };
-  },
-  methods: {
-    async handleSubmit() {
-      await axios
-        .post("http://localhost:3000/login", this.login, {
-          withCredentials: true,
-        })
-        .then((res) => {
-          alert("you are logged in");
-          this.$router.push("/home");
-          this.$bus.$emit("logged", "User logged");
+
+      methods:{
+         async handleSubmit(){
+            await axios.post('http://localhost:3000/login' , this.login ,{withCredentials: true })
+          .then(res=>{
+            alert("login with success")
+             this.$router.push("/home")
+             this.$bus.$emit('logged', 'User logged')
+
+            this.$cookie.set('token',res.data.token)
+          })
+          .catch(error=>{
+            console.log(error);
+          });
+         }
+      }
+
 
           this.$cookie.set("token", res.data.token);
         })
