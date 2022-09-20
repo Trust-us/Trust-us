@@ -1,6 +1,8 @@
 <template lang="">
   <exp_navbar />
   <div>
+    <input type="text" v-model="search"  placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome"/>
+
     <div class="box" v-for="item in state.experiences" :key="item._id">
       <img v-bind:src="item.img" />
       <div>

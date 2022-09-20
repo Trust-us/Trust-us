@@ -48,6 +48,7 @@ export default {
         await axios.post('http://localhost:3000/signup', newUser ,{withCredentials: true })
             .then(res => {
                alert("sign up with success")
+
               this.$router.push('/')
                console.log(res)
             })
