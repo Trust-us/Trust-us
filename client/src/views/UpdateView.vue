@@ -35,13 +35,44 @@
       <div class="form-group">
         <label>Location : </label>
         <select v-model="post.location">
+          <option>Tozeur</option>
           <option>Tunis</option>
-          <option>Hammamt</option>
+          <option>Zaghouan</option>
+          <option>Tataouine</option>
+          <option>Nabeul</option>
+          <option>Bizerte</option>
+          <option>Gabès</option>
+          <option>Gafsa</option>
+          <option>Kairouan</option>
+          <option>Kasserine</option>
+          <option>Kébili</option>
+          <option>Le Kef</option>
+          <option>Mahdia</option>
+          <option>Médenine</option>
+          <option>Monastir</option>
+          <option>Béja</option>
+          <option>Sfax</option>
+          <option>Siliana</option>
+          <option>Sousse</option>
+          <option>Djerba</option>
+          <option>Gammarth</option>
+          <option>kantaoui</option>
           <option>Klibiya</option>
-          <option>Ghamarth</option>
+          <option>kelibia</option>
+          <option>hammamet </option>
         </select>
       </div>
-      <!-- <div class="form-group">
+      <div class="form-group">
+        <label>Rate : </label>
+        <select v-model="post.rate">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+       <!-- <div class="form-group">
         <label for="Image">Image : </label>
         <input type="file" ref="file" multiple accept="image/*" />
       </div>
@@ -105,6 +136,8 @@ export default {
     // Updating the fields 
     async Update() {
       let id = this.id
+      alert("are you sure about updating this post ")
+
       await axios.put(`http://localhost:3000/put/${id}`, this.post)
         .then(response => {
           console.log(response);
